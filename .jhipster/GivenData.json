@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "6",
+            "fieldValidateRulesMaxlength": "6"
+        },
+        {
+            "fieldName": "cityCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cityName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "provinceCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "zoneCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sunday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "monday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tuesday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "wednesday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thursday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "friday",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "saturday",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20190921185916",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "given_data",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

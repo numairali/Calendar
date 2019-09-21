@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="givenData">
+            <h2><span>Given Data</span> {{givenData.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Postal Code</span></dt>
+                <dd>
+                    <span>{{givenData.postalCode}}</span>
+                </dd>
+                <dt><span>City Code</span></dt>
+                <dd>
+                    <span>{{givenData.cityCode}}</span>
+                </dd>
+                <dt><span>City Name</span></dt>
+                <dd>
+                    <span>{{givenData.cityName}}</span>
+                </dd>
+                <dt><span>Province Code</span></dt>
+                <dd>
+                    <span>{{givenData.provinceCode}}</span>
+                </dd>
+                <dt><span>Zone Code</span></dt>
+                <dd>
+                    <span>{{givenData.zoneCode}}</span>
+                </dd>
+                <dt><span>Company Name</span></dt>
+                <dd>
+                    <span>{{givenData.companyName}}</span>
+                </dd>
+                <dt><span>Sunday</span></dt>
+                <dd>
+                    <span>{{givenData.sunday}}</span>
+                </dd>
+                <dt><span>Monday</span></dt>
+                <dd>
+                    <span>{{givenData.monday}}</span>
+                </dd>
+                <dt><span>Tuesday</span></dt>
+                <dd>
+                    <span>{{givenData.tuesday}}</span>
+                </dd>
+                <dt><span>Wednesday</span></dt>
+                <dd>
+                    <span>{{givenData.wednesday}}</span>
+                </dd>
+                <dt><span>Thursday</span></dt>
+                <dd>
+                    <span>{{givenData.thursday}}</span>
+                </dd>
+                <dt><span>Friday</span></dt>
+                <dd>
+                    <span>{{givenData.friday}}</span>
+                </dd>
+                <dt><span>Saturday</span></dt>
+                <dd>
+                    <span>{{givenData.saturday}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/given-data', givenData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
