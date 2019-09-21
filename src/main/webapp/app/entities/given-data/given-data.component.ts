@@ -142,8 +142,10 @@ export class GivenDataComponent implements OnInit, OnDestroy {
   }
 
   protected paginateGivenData(data: IGivenData[], headers: HttpHeaders) {
-    this.links = this.parseLinks.parse(headers.get('link'));
-    this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
+    if (headers !== null) {
+      this.links = this.parseLinks.parse(headers.get('link'));
+      this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
+    }
     this.givenData = data;
   }
 
@@ -160,7 +162,8 @@ export class GivenDataComponent implements OnInit, OnDestroy {
     this.givenDataService
       .findByPostalCode(postalCode)
       .subscribe(
-        (res) => console.log(res),
+        // (res) => console.log(res),
+        (res: any) => this.paginateGivenData(res.body, null),
         (res: HttpErrorResponse) => this.onError(res.message)
       );
   }

@@ -100,6 +100,16 @@ public class GivenDataResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
      *         of givenData in body.
      */
+    // @GetMapping("/given-data")
+    // public ResponseEntity<List<GivenData>> getAllGivenData(Pageable pageable,
+    //         @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
+    //     log.debug("REST request to get a page of GivenData");
+    //     log.info(queryParams.toString());
+    //     Page<GivenData> page = givenDataRepository.findAll(pageable);
+    //     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
+    //     return ResponseEntity.ok().headers(headers).body(page.getContent());
+    // }
+
     @GetMapping("/given-data")
     public ResponseEntity<List<GivenData>> getAllGivenData(Pageable pageable,
             @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
@@ -109,13 +119,13 @@ public class GivenDataResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-
-
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<GivenData>> getBrand(@RequestParam(value = "postalCode") String postalCode) {
-        List<GivenData> page = givenDataRepository.findGivenDataByPostalCode(postalCode);
-       // HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
-        return ResponseEntity.ok().headers(null).body(page);
+    public ResponseEntity<List<GivenData>> getBrand(@RequestParam(value ="postalCode") String postalCode) {
+    List<GivenData> page = givenDataRepository.findGivenDataByPostalCode(postalCode);
+    // HttpHeaders headers =  PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
+    // Page<GivenData> page = givenDataRepository.findGivenDataByPostalCode(postalCode);
+
+    return ResponseEntity.ok().headers(null).body(page);
     }
 
     /**
