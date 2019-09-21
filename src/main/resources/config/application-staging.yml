@@ -21,8 +21,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: root
+    url: jdbc:postgresql://localhost:5432/ShyftBase
+    username: ShyftBase
     password:
     hikari:
       poolName: Hikari
